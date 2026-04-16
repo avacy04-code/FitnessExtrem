@@ -1,0 +1,113 @@
+export default function LandingPage() {
+  const services = [
+    {
+      title: "Plan de Entrenamiento",
+      description: "Rutinas personalizadas según tu objetivo.",
+      price: "35€/mes",
+      icon: "🏋️",
+    },
+    {
+      title: "Plan Nutricional",
+      description: "Alimentación adaptada a ti sin dietas extremas.",
+      price: "35€/mes",
+      icon: "🥗",
+    },
+    {
+      title: "Pack Completo",
+      description: "Entrenamiento + nutrición con seguimiento total.",
+      price: "60€/mes",
+      icon: "🔥",
+    },
+  ];
+
+  const testimonials = [
+    {
+      name: "Cliente real",
+      text: "Perdí 8kg en 3 meses sin pasar hambre y entrenando desde casa.",
+    },
+    {
+      name: "Cliente real",
+      text: "Por primera vez soy constante. El seguimiento marca la diferencia.",
+    },
+    {
+      name: "Cliente real",
+      text: "He ganado músculo y mejorado mi energía diaria.",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-white text-slate-900">
+      {/* HERO */}
+      <section className="bg-gradient-to-br from-black to-emerald-700 text-white text-center py-24 px-6">
+        <h1 className="text-5xl font-bold">FitnessExtrem</h1>
+        <p className="mt-6 text-xl max-w-2xl mx-auto">
+          Pierde grasa, gana músculo y mejora tu salud con planes personalizados.
+        </p>
+        <a
+          href="https://wa.me/34628610934"
+          className="mt-8 inline-block bg-emerald-500 px-8 py-4 rounded-2xl font-semibold text-lg"
+        >
+          Empezar por WhatsApp
+        </a>
+      </section>
+
+      {/* SERVICIOS */}
+      <section className="max-w-7xl mx-auto px-6 py-20">
+        <h2 className="text-3xl font-bold text-center">Servicios</h2>
+        <div className="mt-12 grid md:grid-cols-3 gap-8">
+          {services.map((s) => (
+            <div key={s.title} className="p-8 border rounded-3xl shadow hover:shadow-xl transition">
+              <div className="text-5xl">{s.icon}</div>
+              <h3 className="mt-4 text-xl font-bold">{s.title}</h3>
+              <p className="mt-2 text-slate-600">{s.description}</p>
+              <p className="mt-4 text-2xl font-bold text-emerald-600">{s.price}</p>
+              <a
+                href="https://wa.me/34628610934"
+                className="mt-4 inline-block bg-slate-900 text-white px-4 py-2 rounded-xl"
+              >
+                Contratar
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* OFERTA */}
+      <section className="bg-emerald-600 text-white text-center py-20 px-6">
+        <h2 className="text-4xl font-bold">OFERTA</h2>
+        <p className="mt-4 text-xl">Entrenamiento + Nutrición por 60€/mes</p>
+        <a
+          href="https://wa.me/34628610934"
+          className="mt-6 inline-block bg-white text-emerald-700 px-8 py-3 rounded-2xl font-semibold"
+        >
+          Aprovechar oferta
+        </a>
+      </section>
+
+      {/* TESTIMONIOS */}
+      <section className="max-w-7xl mx-auto px-6 py-20">
+        <h2 className="text-3xl font-bold text-center">Resultados reales</h2>
+        <div className="mt-12 grid md:grid-cols-3 gap-8">
+          {testimonials.map((t, i) => (
+            <div key={i} className="bg-slate-900 text-white p-8 rounded-3xl">
+              <p>“{t.text}”</p>
+              <p className="mt-4 font-bold">{t.name}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA FINAL */}
+      <section className="bg-slate-900 text-white text-center py-20 px-6">
+        <h2 className="text-3xl font-bold">Empieza hoy</h2>
+        <p className="mt-4">Plazas limitadas cada mes</p>
+        <a
+          href="https://wa.me/34628610934"
+          className="mt-6 inline-block bg-emerald-500 px-8 py-4 rounded-2xl font-semibold"
+        >
+          Contactar ahora
+        </a>
+      </section>
+    </div>
+  );
+}
