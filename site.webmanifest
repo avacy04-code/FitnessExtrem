@@ -1,15 +1,8 @@
 {
   "name": "FitnessExtrem",
-  "short_name": "FitnessExtrem",
+  "short_name": "Fitness",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#050805",
-  "theme_color": "#07110b",
-  "icons": [
-    {
-      "src": "assets/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
-    }
-  ]
+  "background_color": "#000000",
+  "theme_color": "#22c55e"
 }
