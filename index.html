@@ -48,7 +48,8 @@
         <a href="#inicio">Inicio</a>
         <a href="#servicios">Servicios</a>
         <a href="#planes">Planes</a>
-        <a href="#testimonios">Resultados</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#testimonios">Testimonios</a>
         <a href="#faq">Preguntas</a>
         <a href="#contacto">Contacto</a>
       </nav>
@@ -89,6 +90,37 @@
         <p>
           Trabajamos con clientes de Madrid, Barcelona, Valencia, Sevilla, Málaga, Bilbao y toda España.
         </p>
+      </div>
+    </section>
+
+    <section id="resultados" class="results reveal reveal-up">
+      <div class="container">
+        <h2>Resultados que marcan la diferencia</h2>
+        <p class="section-intro">
+          Un sistema pensado para ayudarte a avanzar con estructura, constancia y seguimiento.
+        </p>
+
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span class="stat-number" data-target="150">0</span>
+            <p>Planes personalizados creados</p>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-number" data-target="92">0</span>
+            <p>Clientes satisfechos</p>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-number" data-target="8">0</span>
+            <p>Kg perdidos de media en procesos de definición</p>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-number" data-target="24">0</span>
+            <p>Horas de respuesta y seguimiento</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -165,22 +197,40 @@
 
     <section id="testimonios" class="testimonials reveal reveal-up">
       <div class="container">
-        <h2>Resultados reales</h2>
-        <div class="grid-3">
-          <article class="testimonial reveal reveal-up">
-            <p>“Perdí 8 kg en 3 meses y por primera vez seguí un plan de verdad.”</p>
-            <span>— Carlos</span>
-          </article>
+        <h2>Testimonios</h2>
+        <p class="section-intro">
+          Historias de personas que decidieron empezar y mantener el proceso.
+        </p>
 
-          <article class="testimonial reveal reveal-up">
-            <p>“Nunca había tenido tanta constancia. Todo está adaptado y se nota.”</p>
-            <span>— Laura</span>
-          </article>
+        <div class="testimonial-slider">
+          <button class="slider-btn prev" id="prevTestimonial" aria-label="Testimonio anterior">‹</button>
 
-          <article class="testimonial reveal reveal-up">
-            <p>“La nutrición se adapta a mi rutina y por fin no siento que esté a dieta.”</p>
-            <span>— Marta</span>
-          </article>
+          <div class="testimonial-track-wrapper">
+            <div class="testimonial-track" id="testimonialTrack">
+              <article class="testimonial-slide active">
+                <p>“Perdí 8 kg en 3 meses y por primera vez seguí un plan de verdad. Todo estaba claro y adaptado a mí.”</p>
+                <span>— Carlos, 29 años</span>
+              </article>
+
+              <article class="testimonial-slide">
+                <p>“Nunca había tenido tanta constancia. El seguimiento hizo que no abandonara y encima veía progreso cada semana.”</p>
+                <span>— Laura, 34 años</span>
+              </article>
+
+              <article class="testimonial-slide">
+                <p>“La nutrición encaja con mi rutina y ya no siento que hago una dieta imposible. Es práctico y sostenible.”</p>
+                <span>— Marta, 31 años</span>
+              </article>
+            </div>
+          </div>
+
+          <button class="slider-btn next" id="nextTestimonial" aria-label="Siguiente testimonio">›</button>
+        </div>
+
+        <div class="slider-dots" id="sliderDots">
+          <button class="dot active" data-slide="0" aria-label="Ir al testimonio 1"></button>
+          <button class="dot" data-slide="1" aria-label="Ir al testimonio 2"></button>
+          <button class="dot" data-slide="2" aria-label="Ir al testimonio 3"></button>
         </div>
       </div>
     </section>
@@ -189,19 +239,46 @@
       <div class="container">
         <h2>Preguntas frecuentes</h2>
 
-        <div class="faq-item reveal reveal-up">
-          <h3>¿Necesito experiencia previa?</h3>
-          <p>No. El plan se adapta a tu nivel, tanto si empiezas desde cero como si ya entrenas.</p>
-        </div>
+        <div class="faq-accordion">
+          <article class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>¿Necesito experiencia previa?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. El plan se adapta a tu nivel, tanto si empiezas desde cero como si ya entrenas.</p>
+            </div>
+          </article>
 
-        <div class="faq-item reveal reveal-up">
-          <h3>¿Puedo hacerlo desde casa?</h3>
-          <p>Sí. El entrenamiento se adapta al material que tengas y al lugar donde entrenes.</p>
-        </div>
+          <article class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>¿Puedo hacerlo desde casa?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sí. El entrenamiento se adapta al material que tengas y al lugar donde entrenes.</p>
+            </div>
+          </article>
 
-        <div class="faq-item reveal reveal-up">
-          <h3>¿Qué plan conviene más?</h3>
-          <p>Si quieres mejores resultados, la oferta conjunta de entrenamiento y nutrición es la opción más completa.</p>
+          <article class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>¿Qué plan conviene más?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Si quieres mejores resultados, la oferta conjunta de entrenamiento y nutrición es la opción más completa.</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>¿Cuánto tardaré en ver resultados?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Depende de tu punto de partida y de tu constancia, pero normalmente las primeras mejoras se notan en pocas semanas.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
