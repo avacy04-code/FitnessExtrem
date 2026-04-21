@@ -1,122 +1,241 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Entrenador Personal Online y Nutrición | FitnessExtrem España</title>
+  <title>Entrenador Personal Online y Nutrición | FitnessExtrem España</title>
+  <meta name="description" content="Entrenamiento personalizado y nutrición online en España. Planes desde 35€/mes con seguimiento profesional.">
+  <meta name="keywords" content="entrenador personal online, nutricionista online, entrenamiento personalizado, dieta personalizada, entrenador online españa, nutrición personalizada online">
+  <meta name="robots" content="index, follow">
 
-<meta name="description" content="Entrenamiento personalizado y nutrición online en España. Planes desde 35€/mes con seguimiento profesional.">
+  <link rel="canonical" href="https://avacy04-code.github.io/FitnessExtrem/">
+  <link rel="stylesheet" href="styles.css">
 
-<meta name="keywords" content="entrenador personal online, nutricionista online, entrenamiento personalizado, dieta personalizada">
+  <meta property="og:title" content="FitnessExtrem | Entrenamiento y Nutrición Personalizada">
+  <meta property="og:description" content="Planes personalizados desde 35€/mes. Entrenamiento y nutrición online en toda España.">
+  <meta property="og:image" content="https://avacy04-code.github.io/FitnessExtrem/img/hero.jpg">
+  <meta property="og:url" content="https://avacy04-code.github.io/FitnessExtrem/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
 
-<link rel="stylesheet" href="styles.css">
-
-<link rel="canonical" href="https://avacy04-code.github.io/FitnessExtrem/">
-
-<meta property="og:title" content="FitnessExtrem">
-<meta property="og:description" content="Entrenamiento y nutrición personalizada">
-<meta property="og:image" content="https://avacy04-code.github.io/FitnessExtrem/img/hero.jpg">
-
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "ProfessionalService",
- "name": "FitnessExtrem",
- "telephone": "628610934",
- "email": "a.vacy04@gmail.com",
- "areaServed": "ES"
-}
-</script>
-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "FitnessExtrem",
+    "url": "https://avacy04-code.github.io/FitnessExtrem/",
+    "telephone": "628610934",
+    "email": "a.vacy04@gmail.com",
+    "areaServed": "ES",
+    "description": "Entrenamiento personalizado y nutrición online en España.",
+    "priceRange": "€€"
+  }
+  </script>
 </head>
-
 <body>
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#inicio" class="logo">FitnessExtrem</a>
 
-<header>
-<h1>FitnessExtrem</h1>
-<nav>
-<a href="#inicio">Inicio</a>
-<a href="#servicios">Servicios</a>
-<a href="#planes">Planes</a>
-<a href="#contacto">Contacto</a>
-</nav>
-</header>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-<!-- HERO -->
-<section id="inicio" class="hero" style="background-image:url('img/hero.jpg')">
-<h1>Entrenamiento y Nutrición Personalizada Online en España</h1>
-<p>Consigue resultados reales con seguimiento profesional</p>
-<a href="https://wa.me/34628610934" class="cta">Contactar por WhatsApp</a>
-</section>
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#planes">Planes</a>
+        <a href="#testimonios">Resultados</a>
+        <a href="#faq">Preguntas</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
 
-<!-- SEO -->
-<section>
-<h2>Entrenador personal online en España</h2>
-<p>
-FitnessExtrem ofrece entrenamiento personalizado y nutrición online en toda España.
-Planes diseñados para perder grasa, ganar músculo y mejorar tu rendimiento.
-</p>
+  <main>
+    <section id="inicio" class="hero" style="background-image: url('img/hero.jpg');">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content reveal reveal-up">
+        <p class="eyebrow">Entrenamiento y nutrición online en España</p>
+        <h1>Transforma tu físico con un plan personalizado y seguimiento real</h1>
+        <p class="hero-text">
+          En FitnessExtrem te ayudamos a perder grasa, ganar músculo y mejorar tu rendimiento
+          con entrenamiento y nutrición adaptados a tu objetivo, nivel y estilo de vida.
+        </p>
 
-<p>
-Disponible en Madrid, Barcelona, Valencia, Sevilla, Málaga y toda España.
-</p>
-</section>
+        <div class="hero-cta">
+          <a href="https://wa.me/34628610934?text=Hola%20FitnessExtrem,%20quiero%20informaci%C3%B3n%20sobre%20los%20planes." class="cta">Hablar por WhatsApp</a>
+          <a href="#planes" class="cta cta-secondary">Ver planes</a>
+        </div>
 
-<!-- SERVICIOS -->
-<section id="servicios">
-<h2>Servicios</h2>
+        <ul class="hero-points">
+          <li>Seguimiento personalizado</li>
+          <li>Planes adaptados a ti</li>
+          <li>Servicio en toda España</li>
+        </ul>
+      </div>
+    </section>
 
-<div class="card">
-<img src="img/nutricion.jpg" alt="Nutrición personalizada">
-<h3>Nutrición personalizada</h3>
-<p>35€/mes</p>
-<a href="https://wa.me/34628610934" class="cta">Empezar</a>
-</div>
+    <section class="seo-block reveal reveal-up">
+      <div class="container">
+        <h2>Entrenador personal online en España</h2>
+        <p>
+          FitnessExtrem ofrece entrenamiento personalizado y nutrición online para personas
+          que quieren cambiar su cuerpo con una estrategia clara, profesional y sostenible.
+        </p>
+        <p>
+          Trabajamos con clientes de Madrid, Barcelona, Valencia, Sevilla, Málaga, Bilbao y toda España.
+        </p>
+      </div>
+    </section>
 
-<div class="card">
-<img src="img/entrenamiento.jpg" alt="Entrenamiento personalizado">
-<h3>Entrenamiento personalizado</h3>
-<p>35€/mes</p>
-<a href="https://wa.me/34628610934" class="cta">Empezar</a>
-</div>
+    <section id="servicios" class="services reveal reveal-up">
+      <div class="container">
+        <h2>Servicios</h2>
+        <p class="section-intro">
+          Elige la opción que mejor encaja contigo o combina ambas para acelerar resultados.
+        </p>
 
-</section>
+        <div class="grid-2">
+          <article class="card reveal reveal-left">
+            <img src="img/nutricion.jpg" alt="Servicio de nutrición personalizada online FitnessExtrem">
+            <div class="card-content">
+              <h3>Nutrición personalizada</h3>
+              <p>
+                Plan nutricional adaptado a tu objetivo, horarios, gustos y estilo de vida.
+                Sin dietas extremas ni métodos imposibles.
+              </p>
+              <p class="price">35€/mes</p>
+              <a href="https://wa.me/34628610934?text=Hola%20FitnessExtrem,%20quiero%20el%20plan%20de%20nutrici%C3%B3n." class="cta">Quiero nutrición</a>
+            </div>
+          </article>
 
-<!-- PLANES -->
-<section id="planes">
-<h2>Planes personalizados</h2>
+          <article class="card reveal reveal-right">
+            <img src="img/entrenamiento.jpg" alt="Servicio de entrenamiento personalizado online FitnessExtrem">
+            <div class="card-content">
+              <h3>Entrenamiento personalizado</h3>
+              <p>
+                Rutina diseñada según tu nivel, tu material disponible y el tiempo que tienes para entrenar.
+              </p>
+              <p class="price">35€/mes</p>
+              <a href="https://wa.me/34628610934?text=Hola%20FitnessExtrem,%20quiero%20el%20plan%20de%20entrenamiento." class="cta">Quiero entrenamiento</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<img src="img/nutricion-plan.jpg" alt="Plan nutrición">
-<img src="img/entrenamiento-plan.jpg" alt="Plan entrenamiento">
+    <section id="planes" class="plans reveal reveal-up">
+      <div class="container">
+        <h2>Planes personalizados</h2>
+        <p class="section-intro">
+          Tres opciones claras para empezar hoy mismo.
+        </p>
 
-<div class="oferta">
-<img src="img/oferta-conjunta.jpg" alt="Oferta conjunta">
-<h3>Oferta conjunta</h3>
-<p>60€/mes</p>
-<a href="https://wa.me/34628610934" class="cta">Aprovechar oferta</a>
-</div>
+        <div class="grid-3">
+          <article class="plan-card reveal reveal-up">
+            <img src="img/nutricion-plan.jpg" alt="Plan de nutrición personalizada FitnessExtrem">
+            <h3>Plan de nutrición</h3>
+            <p>Alimentación adaptada a tu objetivo con estructura fácil de seguir.</p>
+            <p class="price">35€/mes</p>
+            <a href="https://wa.me/34628610934?text=Hola%20FitnessExtrem,%20quiero%20contratar%20el%20plan%20de%20nutrici%C3%B3n." class="cta">Contratar</a>
+          </article>
 
-</section>
+          <article class="plan-card reveal reveal-up">
+            <img src="img/entrenamiento-plan.jpg" alt="Plan de entrenamiento personalizado FitnessExtrem">
+            <h3>Plan de entrenamiento</h3>
+            <p>Rutina personalizada para gimnasio o casa, adaptada a tu nivel.</p>
+            <p class="price">35€/mes</p>
+            <a href="https://wa.me/34628610934?text=Hola%20FitnessExtrem,%20quiero%20contratar%20el%20plan%20de%20entrenamiento." class="cta">Contratar</a>
+          </article>
 
-<!-- TESTIMONIOS -->
-<section>
-<h2>Resultados reales</h2>
+          <article class="plan-card featured reveal reveal-up">
+            <img src="img/oferta-conjunta.jpg" alt="Oferta conjunta de entrenamiento y nutrición FitnessExtrem">
+            <h3>Oferta conjunta</h3>
+            <p>Entrenamiento y nutrición en un solo plan para maximizar resultados.</p>
+            <p class="price">60€/mes</p>
+            <a href="https://wa.me/34628610934?text=Hola%20FitnessExtrem,%20quiero%20la%20oferta%20conjunta%20de%2060%E2%82%AC." class="cta">Aprovechar oferta</a>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<p>"Perdí 8kg en 3 meses con FitnessExtrem" – Carlos</p>
-<p>"Nunca había tenido tanta constancia entrenando" – Laura</p>
-<p>"La dieta se adapta totalmente a mi vida" – Marta</p>
+    <section id="testimonios" class="testimonials reveal reveal-up">
+      <div class="container">
+        <h2>Resultados reales</h2>
+        <div class="grid-3">
+          <article class="testimonial reveal reveal-up">
+            <p>“Perdí 8 kg en 3 meses y por primera vez seguí un plan de verdad.”</p>
+            <span>— Carlos</span>
+          </article>
 
-</section>
+          <article class="testimonial reveal reveal-up">
+            <p>“Nunca había tenido tanta constancia. Todo está adaptado y se nota.”</p>
+            <span>— Laura</span>
+          </article>
 
-<!-- CONTACTO -->
-<section id="contacto">
-<h2>Contacto</h2>
-<p>📞 628610934</p>
-<p>📧 a.vacy04@gmail.com</p>
+          <article class="testimonial reveal reveal-up">
+            <p>“La nutrición se adapta a mi rutina y por fin no siento que esté a dieta.”</p>
+            <span>— Marta</span>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<a href="https://wa.me/34628610934" class="cta">Hablar por WhatsApp</a>
-</section>
+    <section id="faq" class="faq reveal reveal-up">
+      <div class="container">
+        <h2>Preguntas frecuentes</h2>
 
+        <div class="faq-item reveal reveal-up">
+          <h3>¿Necesito experiencia previa?</h3>
+          <p>No. El plan se adapta a tu nivel, tanto si empiezas desde cero como si ya entrenas.</p>
+        </div>
+
+        <div class="faq-item reveal reveal-up">
+          <h3>¿Puedo hacerlo desde casa?</h3>
+          <p>Sí. El entrenamiento se adapta al material que tengas y al lugar donde entrenes.</p>
+        </div>
+
+        <div class="faq-item reveal reveal-up">
+          <h3>¿Qué plan conviene más?</h3>
+          <p>Si quieres mejores resultados, la oferta conjunta de entrenamiento y nutrición es la opción más completa.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contact reveal reveal-up">
+      <div class="container">
+        <h2>Empieza hoy</h2>
+        <p>Escríbenos y te diremos qué plan encaja mejor contigo según tu objetivo.</p>
+
+        <div class="contact-box reveal reveal-up">
+          <p><strong>Teléfono:</strong> <a href="tel:+34628610934">628610934</a></p>
+          <p><strong>Email:</strong> <a href="mailto:a.vacy04@gmail.com">a.vacy04@gmail.com</a></p>
+          <a href="https://wa.me/34628610934?text=Hola%20FitnessExtrem,%20quiero%20m%C3%A1s%20informaci%C3%B3n." class="cta">Hablar por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a
+    href="https://wa.me/34628610934?text=Hola%20FitnessExtrem,%20quiero%20informaci%C3%B3n."
+    class="whatsapp-float"
+    aria-label="Abrir WhatsApp"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <span>WhatsApp</span>
+  </a>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 FitnessExtrem. Entrenamiento y nutrición personalizada.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
