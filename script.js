@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("FitnessExtrem listo");
-
   const menuToggle = document.getElementById("menuToggle");
   const mainNav = document.getElementById("mainNav");
   const navLinks = document.querySelectorAll(".main-nav a");
@@ -16,8 +14,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const faqItems = document.querySelectorAll(".faq-item");
 
+  const leadForm = document.getElementById("leadForm");
+  const formMessage = document.getElementById("formMessage");
+  const planSelect = document.getElementById("plan");
+  const planLinks = document.querySelectorAll("[data-plan-link]");
+  const mensajeAutomatico = document.getElementById("mensajeAutomatico");
+
   let currentSlide = 0;
   let testimonialInterval;
+
+  const mensajesPorPlan = {
+    "Nutrición": "Lead interesado en el plan de Nutrición. Prioridad: explicar cómo se adapta la alimentación a su objetivo, hábitos y horarios.",
+    "Entrenamiento": "Lead interesado en el plan de Entrenamiento. Prioridad: explicar cómo se personaliza la rutina según nivel, material y disponibilidad.",
+    "Oferta conjunta": "Lead interesado en la Oferta conjunta. Prioridad: explicar ventajas de combinar entrenamiento y nutrición para acelerar resultados."
+  };
 
   if (menuToggle && mainNav) {
     menuToggle.addEventListener("click", () => {
@@ -59,21 +69,18 @@ document.addEventListener("DOMContentLoaded", () => {
     { threshold: 0.14 }
   );
 
-  revealElements.forEach((element) => {
-    revealObserver.observe(element);
-  });
+  revealElements.forEach((element) => revealObserver.observe(element));
 
   let statsAnimated = false;
 
   const animateValue = (element, target) => {
-    let start = 0;
     const duration = 1800;
     const startTime = performance.now();
 
     const updateCounter = (currentTime) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      const value = Math.floor(progress * (target - start) + start);
+      const value = Math.floor(progress * target);
 
       if (target === 92) {
         element.textContent = `${value}%`;
@@ -85,9 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
         element.textContent = `${value}+`;
       }
 
-      if (progress < 1) {
-        requestAnimationFrame(updateCounter);
-      }
+      if (progress < 1) requestAnimationFrame(updateCounter);
     };
 
     requestAnimationFrame(updateCounter);
@@ -113,31 +118,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const showSlide = (index) => {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle("active", i === index);
-    });
-
-    dots.forEach((dot, i) => {
-      dot.classList.toggle("active", i === index);
-    });
-
+    slides.forEach((slide, i) => slide.classList.toggle("active", i === index));
+    dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
     currentSlide = index;
   };
 
-  const nextSlide = () => {
-    const nextIndex = (currentSlide + 1) % slides.length;
-    showSlide(nextIndex);
-  };
-
-  const prevSlide = () => {
-    const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(prevIndex);
-  };
+  const nextSlide = () => showSlide((currentSlide + 1) % slides.length);
+  const prevSlide = () => showSlide((currentSlide - 1 + slides.length) % slides.length);
 
   const startTestimonialAutoPlay = () => {
-    if (slides.length > 1) {
-      testimonialInterval = setInterval(nextSlide, 5000);
-    }
+    if (slides.length > 1) testimonialInterval = setInterval(nextSlide, 5000);
   };
 
   const resetTestimonialAutoPlay = () => {
@@ -165,14 +155,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     dots.forEach((dot) => {
       dot.addEventListener("click", () => {
-        const index = Number(dot.getAttribute("data-slide"));
-        showSlide(index);
+        showSlide(Number(dot.getAttribute("data-slide")));
         resetTestimonialAutoPlay();
       });
     });
   }
 
-  faqItems.forEach((item, index) => {
+  faqItems.forEach((item) => {
     const button = item.querySelector(".faq-question");
     const answer = item.querySelector(".faq-answer");
 
@@ -196,4 +185,65 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  planLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      const selectedPlan = link.getAttribute("data-plan-link");
+      if (planSelect && selectedPlan) {
+        planSelect.value = selectedPlan;
+        if (mensajeAutomatico) {
+          mensajeAutomatico.value = mensajesPorPlan[selectedPlan] || "";
+        }
+      }
+    });
+  });
+
+  if (planSelect) {
+    planSelect.addEventListener("change", () => {
+      const selectedPlan = planSelect.value;
+      if (mensajeAutomatico) {
+        mensajeAutomatico.value = mensajesPorPlan[selectedPlan] || "";
+      }
+    });
+  }
+
+  if (leadForm) {
+    leadForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const selectedPlan = planSelect ? planSelect.value : "";
+      if (mensajeAutomatico) {
+        mensajeAutomatico.value = mensajesPorPlan[selectedPlan] || "Lead recibido desde formulario general.";
+      }
+
+      if (formMessage) {
+        formMessage.textContent = "Enviando solicitud...";
+        formMessage.className = "form-message";
+      }
+
+      const formData = new FormData(leadForm);
+
+      try {
+        const response = await fetch(leadForm.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json"
+          }
+        });
+
+        if (response.ok) {
+          leadForm.reset();
+          window.location.href = "gracias.html";
+        } else {
+          throw new Error("No se pudo enviar el formulario.");
+        }
+      } catch (error) {
+        if (formMessage) {
+          formMessage.textContent = "Hubo un problema al enviar. Prueba por WhatsApp o revisa el email configurado.";
+          formMessage.className = "form-message error";
+        }
+      }
+    });
+  }
 });
