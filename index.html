@@ -69,7 +69,7 @@
 
         <div class="hero-cta">
           <a href="https://wa.me/34628610934?text=Hola%20FitnessExtrem,%20quiero%20informaci%C3%B3n%20sobre%20los%20planes." class="cta">Hablar por WhatsApp</a>
-          <a href="#planes" class="cta cta-secondary">Ver planes</a>
+          <a href="#lead-form" class="cta cta-secondary">Quiero valoración</a>
         </div>
 
         <ul class="hero-points">
@@ -141,7 +141,7 @@
                 Sin dietas extremas ni métodos imposibles.
               </p>
               <p class="price">35€/mes</p>
-              <a href="https://wa.me/34628610934?text=Hola%20FitnessExtrem,%20quiero%20el%20plan%20de%20nutrici%C3%B3n." class="cta">Quiero nutrición</a>
+              <a href="#lead-form" class="cta">Quiero nutrición</a>
             </div>
           </article>
 
@@ -153,7 +153,7 @@
                 Rutina diseñada según tu nivel, tu material disponible y el tiempo que tienes para entrenar.
               </p>
               <p class="price">35€/mes</p>
-              <a href="https://wa.me/34628610934?text=Hola%20FitnessExtrem,%20quiero%20el%20plan%20de%20entrenamiento." class="cta">Quiero entrenamiento</a>
+              <a href="#lead-form" class="cta">Quiero entrenamiento</a>
             </div>
           </article>
         </div>
@@ -173,7 +173,7 @@
             <h3>Plan de nutrición</h3>
             <p>Alimentación adaptada a tu objetivo con estructura fácil de seguir.</p>
             <p class="price">35€/mes</p>
-            <a href="https://wa.me/34628610934?text=Hola%20FitnessExtrem,%20quiero%20contratar%20el%20plan%20de%20nutrici%C3%B3n." class="cta">Contratar</a>
+            <a href="#lead-form" class="cta" data-plan-link="Nutrición">Contratar</a>
           </article>
 
           <article class="plan-card reveal reveal-up">
@@ -181,7 +181,7 @@
             <h3>Plan de entrenamiento</h3>
             <p>Rutina personalizada para gimnasio o casa, adaptada a tu nivel.</p>
             <p class="price">35€/mes</p>
-            <a href="https://wa.me/34628610934?text=Hola%20FitnessExtrem,%20quiero%20contratar%20el%20plan%20de%20entrenamiento." class="cta">Contratar</a>
+            <a href="#lead-form" class="cta" data-plan-link="Entrenamiento">Contratar</a>
           </article>
 
           <article class="plan-card featured reveal reveal-up">
@@ -189,7 +189,7 @@
             <h3>Oferta conjunta</h3>
             <p>Entrenamiento y nutrición en un solo plan para maximizar resultados.</p>
             <p class="price">60€/mes</p>
-            <a href="https://wa.me/34628610934?text=Hola%20FitnessExtrem,%20quiero%20la%20oferta%20conjunta%20de%2060%E2%82%AC." class="cta">Aprovechar oferta</a>
+            <a href="#lead-form" class="cta" data-plan-link="Oferta conjunta">Aprovechar oferta</a>
           </article>
         </div>
       </div>
@@ -277,6 +277,92 @@
               <p>Depende del punto de partida y de la constancia, pero normalmente los primeros cambios se notan en pocas semanas.</p>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="lead-form" class="lead-section reveal reveal-up">
+      <div class="container">
+        <h2>Solicita tu valoración gratuita</h2>
+        <p class="section-intro">
+          Déjanos tus datos y te responderemos con la mejor opción según tu objetivo.
+        </p>
+
+        <div class="lead-wrapper">
+          <form
+            id="leadForm"
+            class="lead-form"
+            action="https://formsubmit.co/ajax/a.vacy04@gmail.com"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="Nuevo lead desde FitnessExtrem">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_url" value="https://avacy04-code.github.io/FitnessExtrem/">
+            <input type="text" name="_honey" class="hidden-field" tabindex="-1" autocomplete="off">
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+              </div>
+
+              <div class="form-group">
+                <label for="telefono">Teléfono / WhatsApp</label>
+                <input type="tel" id="telefono" name="telefono" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Correo</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+
+              <div class="form-group">
+                <label for="plan">Plan de interés</label>
+                <select id="plan" name="plan" required>
+                  <option value="">Selecciona una opción</option>
+                  <option value="Nutrición">Nutrición</option>
+                  <option value="Entrenamiento">Entrenamiento</option>
+                  <option value="Oferta conjunta">Oferta conjunta</option>
+                </select>
+              </div>
+
+              <div class="form-group form-group-full">
+                <label for="objetivo">Objetivo principal</label>
+                <select id="objetivo" name="objetivo" required>
+                  <option value="">Selecciona tu objetivo</option>
+                  <option value="Perder grasa">Perder grasa</option>
+                  <option value="Ganar músculo">Ganar músculo</option>
+                  <option value="Tonificar">Tonificar</option>
+                  <option value="Mejorar hábitos">Mejorar hábitos</option>
+                  <option value="Rendimiento">Rendimiento</option>
+                </select>
+              </div>
+
+              <div class="form-group form-group-full">
+                <label for="mensaje">Cuéntanos tu caso</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Ejemplo: quiero perder grasa, entreno 3 días a la semana y necesito algo adaptado a mis horarios."></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="cta">Enviar solicitud</button>
+            <p class="form-note">También puedes escribir directamente por WhatsApp si prefieres una respuesta más rápida.</p>
+            <p id="formMessage" class="form-message" aria-live="polite"></p>
+          </form>
+
+          <div class="lead-side">
+            <h3>Qué consigues al dejar tu solicitud</h3>
+            <ul>
+              <li>Valoración inicial de tu caso</li>
+              <li>Recomendación del plan más adecuado</li>
+              <li>Contacto directo por WhatsApp o correo</li>
+              <li>Respuesta enfocada a tu objetivo real</li>
+            </ul>
+
+            <a href="https://wa.me/34628610934?text=Hola%20FitnessExtrem,%20quiero%20una%20valoraci%C3%B3n%20gratuita." class="cta cta-secondary">
+              Prefiero WhatsApp
+            </a>
+          </div>
         </div>
       </div>
     </section>
