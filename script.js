@@ -24,9 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let testimonialInterval;
 
   const mensajesPorPlan = {
-    "Nutrición": "Lead interesado en el plan de Nutrición. Prioridad: explicar cómo se adapta la alimentación a su objetivo, hábitos y horarios.",
-    "Entrenamiento": "Lead interesado en el plan de Entrenamiento. Prioridad: explicar cómo se personaliza la rutina según nivel, material y disponibilidad.",
-    "Oferta conjunta": "Lead interesado en la Oferta conjunta. Prioridad: explicar ventajas de combinar entrenamiento y nutrición para acelerar resultados."
+    "Nutrición": "Lead interesado en el plan de Nutrición.",
+    "Entrenamiento": "Lead interesado en el plan de Entrenamiento.",
+    "Oferta conjunta": "Lead interesado en la Oferta conjunta."
   };
 
   if (menuToggle && mainNav) {
@@ -127,7 +127,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevSlide = () => showSlide((currentSlide - 1 + slides.length) % slides.length);
 
   const startTestimonialAutoPlay = () => {
-    if (slides.length > 1) testimonialInterval = setInterval(nextSlide, 5000);
+    if (slides.length > 1) {
+      testimonialInterval = setInterval(nextSlide, 5000);
+    }
   };
 
   const resetTestimonialAutoPlay = () => {
@@ -208,42 +210,47 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (leadForm) {
-    leadForm.addEventListener("submit", async (event) => {
+    leadForm.addEventListener("submit", (event) => {
       event.preventDefault();
 
-      const selectedPlan = planSelect ? planSelect.value : "";
-      if (mensajeAutomatico) {
-        mensajeAutomatico.value = mensajesPorPlan[selectedPlan] || "Lead recibido desde formulario general.";
-      }
+      const nombre = document.getElementById("nombre")?.value.trim() || "";
+      const telefono = document.getElementById("telefono")?.value.trim() || "";
+      const email = document.getElementById("email")?.value.trim() || "";
+      const plan = document.getElementById("plan")?.value.trim() || "";
+      const objetivo = document.getElementById("objetivo")?.value.trim() || "";
+      const mensaje = document.getElementById("mensaje")?.value.trim() || "";
 
-      if (formMessage) {
-        formMessage.textContent = "Enviando solicitud...";
-        formMessage.className = "form-message";
-      }
-
-      const formData = new FormData(leadForm);
-
-      try {
-        const response = await fetch(leadForm.action, {
-          method: "POST",
-          body: formData,
-          headers: {
-            Accept: "application/json"
-          }
-        });
-
-        if (response.ok) {
-          leadForm.reset();
-          window.location.href = "gracias.html";
-        } else {
-          throw new Error("No se pudo enviar el formulario.");
-        }
-      } catch (error) {
+      if (!nombre || !telefono || !email || !plan || !objetivo) {
         if (formMessage) {
-          formMessage.textContent = "Hubo un problema al enviar. Prueba por WhatsApp o revisa el email configurado.";
+          formMessage.textContent = "Completa todos los campos obligatorios.";
           formMessage.className = "form-message error";
         }
+        return;
       }
+
+      const mensajePlan = mensajesPorPlan[plan] || "Lead recibido desde formulario.";
+
+      const textoWhatsapp = `Hola FitnessExtrem, acabo de rellenar el formulario de la web.
+
+*NUEVO LEAD*
+Nombre: ${nombre}
+Teléfono: ${telefono}
+Email: ${email}
+Plan de interés: ${plan}
+Objetivo principal: ${objetivo}
+
+Mensaje automático: ${mensajePlan}
+
+Caso:
+${mensaje || "No ha añadido mensaje extra."}`;
+
+      const urlWhatsapp = `https://wa.me/34628610934?text=${encodeURIComponent(textoWhatsapp)}`;
+
+      window.open(urlWhatsapp, "_blank");
+
+      setTimeout(() => {
+        window.location.href = "gracias.html";
+      }, 800);
     });
   }
 });
